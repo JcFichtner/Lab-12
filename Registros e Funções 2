@@ -1,0 +1,51 @@
+Altere o programa anterior de forma que cin e cout possam ser usados para ler e
+exibir datas.
+
+#include <iostream>
+
+using namespace std;
+
+struct data0
+{
+    int ano;
+};
+
+data0 calc(data0 a, data0 b);
+data0 ler();
+void exibir(data0);
+
+int main()
+{
+    cout << "Ano De Nascimento: ";
+    data0 data1 = ler();
+    
+    cout << "Ano Atual: ";
+    data0 data2 = ler();
+
+    data0 result = calc(data1, data2);
+
+    exibir(result);
+
+}
+
+data0 ler()
+{
+    data0 temp0;
+    
+    cin >> temp0.ano;
+
+    return temp0;
+}
+
+data0 calc(data0 a, data0 b)
+{
+    data0 result;
+    result.ano = b.ano - a.ano;
+    result.ano = result.ano * 365;
+    return result;
+}
+
+void exibir(data0 x)
+{
+    cout << "Voce viveu " << x.ano << " Dias";
+}
