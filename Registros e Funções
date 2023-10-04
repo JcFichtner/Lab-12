@@ -1,0 +1,35 @@
+Crie um registro para descrever uma data. O registro deve ser capaz de armazenar
+o dia, o mês (em formato numérico) e o ano (no formato numérico AAAA). Em
+seguida faça um programa que receba a data de nascimento de uma pessoa e a
+data atual. Calcule e mostre quantos dias de vida ela tem. 
+
+#include <iostream>
+
+using namespace std;
+
+struct data0
+{
+    int ano;
+};
+
+data0 calc(data0 a, data0 b);
+
+int main()
+{
+    data0 nasc = { 1990 };
+    data0 atual = { 2010 };
+
+    data0 resultado = calc(atual, nasc);
+
+    cout << "A diferença em dias entre os anos eh: " << resultado.ano << " dias" << endl;
+
+    return 0;
+}
+
+data0 calc(data0 a, data0 b)
+{
+    data0 result;
+    result.ano = a.ano - b.ano;
+    result.ano = result.ano * 365;
+    return result;
+}
